@@ -1,0 +1,99 @@
+*{
+  /* box-sizing: border-box; */
+  /* padding: 0; */
+  /* margin: 0; */
+}
+body{
+  min-height: 100vh;
+background-color: #56AA30;
+}
+.homepage{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.allproducts{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.leftnav{
+  width:1000px;
+  max-height: 87vh;
+  position: sticky;
+  top:100px;
+  /* margin-top: 100px; */
+  background-color: #56AA30;
+}
+.productbox{
+  /* height:35vw; */
+  width: 250px;
+  background-color: white;
+  border: 1px solid rgb(214, 211, 211);
+  position: relative;
+  padding: 12px;
+  flex-grow: 1;
+  /* margin: 2px; */
+}
+
+.imgcss{
+  width: inherit;
+}
+.offer{
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  color: #56AA30;
+  font-size: 15px;
+}
+.proname{
+  color: #666666;
+  font-size: 14px;
+}
+.pricewtdiv{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: -20px;
+}
+.weight{
+  color: #FCAF3E;
+  border: 1px solid #FCAF3E;
+  padding: 2px;
+  width: max-content;
+  font-size: 14px;
+}
+.crossprice{
+  margin-left: 15px;
+  font-size: 14px;
+  color: red;
+}
+.price{
+  margin-left: 15px;
+  font-size: 14px;
+  color: #4E9A06;
+}
+.plusminuscart{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quantity{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.adtocartbtn{
+  background-color: rgb(163, 8, 8);
+  color: white;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 30px;
+  
+}
+/* .downpart{
+  position: absolute;
+  bottom: 10px;
+} */
