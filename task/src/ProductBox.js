@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import { IconButton } from "@mui/material";
 const ProductBox = (props) => {
   return (
     <div className="productbox">
@@ -24,11 +25,13 @@ const ProductBox = (props) => {
 
       <div className="plusminuscart">
         <div className="quantity">
-          <RemoveCircleIcon sx={{ color: "red",cursor:'pointer' }}/>
+          <IconButton onClick={props.increment}>
+          <RemoveCircleIcon sx={{ color: "red",cursor:'pointer' }}/></IconButton>
           <p>{props.quan}</p>
-          <AddCircleIcon sx={{ color: "green",cursor:'pointer' }} />
+          <IconButton onClick={props.decrement}>
+          <AddCircleIcon sx={{ color: "green",cursor:'pointer' }} /></IconButton>
         </div>
-        <button className="adtocartbtn">Add to Cart</button>
+        <button id={props.id} className="adtocartbtn" onClick={props.addtocart}>Add to Cart</button>
       </div>
       </div>
     </div>

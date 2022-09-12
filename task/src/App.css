@@ -5,12 +5,10 @@
 }
 body{
   min-height: 100vh;
-background-color: #56AA30;
 }
 .homepage{
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
 }
 .allproducts{
 display: flex;
@@ -18,24 +16,23 @@ justify-content: center;
 flex-wrap: wrap;
 }
 .leftnav{
-  width:1000px;
+  width:1100px;
   max-height: 87vh;
   position: sticky;
-  top:100px;
-  /* margin-top: 100px; */
-  background-color: #56AA30;
+  top:180px;
+  background-color: #c4e0b7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .productbox{
-  /* height:35vw; */
   width: 250px;
   background-color: white;
   border: 1px solid rgb(214, 211, 211);
   position: relative;
   padding: 12px;
   flex-grow: 1;
-  /* margin: 2px; */
 }
-
 .imgcss{
   width: inherit;
 }
@@ -47,8 +44,8 @@ flex-wrap: wrap;
   font-size: 15px;
 }
 .proname{
-  color: #666666;
-  font-size: 14px;
+  color: #363636;
+  font-size: 18px;
 }
 .pricewtdiv{
   display: flex;
@@ -93,7 +90,125 @@ flex-wrap: wrap;
   height: 30px;
   
 }
-/* .downpart{
-  position: absolute;
-  bottom: 10px;
-} */
+.reviewcontct{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.sidebtns{
+  margin-top: 20px;
+  margin-left: -40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  
+}
+.sidebtns p{
+
+  padding: 10px 25px;
+  color: #666666;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 12px 0px;
+}
+.sidebtns p:hover{
+  background-color: #556D0B;
+  color: white;
+}
+.upperdiv{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 40px;
+  background-color: #556D0B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.downloadnow{
+  font-size: 15px;
+  color:white;
+  font-weight: bolder;
+}
+.linkdiv{
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.downloadlink{
+  font-size: 15px;
+  color:#b2cf5b;
+  font-weight: bolder;
+}
+.iconsupper{
+  width: 250px;
+  /* background-color: wheat; */
+  /* height: 50px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar{
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 40px;
+  z-index: 1;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar img{
+    width: 180px;
+}
+.sastatext{
+  font-size: 15px;
+  color: #d31d35;
+}
+.lowerdiv{
+  position: sticky;
+  top: 142px;
+  z-index: 1;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+.timingdiv{
+  display: flex;
+
+}
+.timehead{
+  font-weight: bold;
+  margin-left: 10px;
+}
+.timing{
+  color: #556D0B;
+  font-weight: bold;
+}
+.headcross{
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width:900px) {
+  .leftnav{
+    display: none;
+  }
+  .sastatext{
+    font-size: 10px;
+    color: #d31d35;
+  }
+  .productbox{
+    width: 250px;
+    background-color: white;
+    border: 1px solid rgb(214, 211, 211);
+    position: relative;
+    padding: 12px;
+    flex-grow: 0;
+  }
+  
+}
