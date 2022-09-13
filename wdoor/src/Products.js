@@ -1,11 +1,9 @@
 import * as React from "react";
 import ProductBox from "./ProductBox.js";
 import { contxtname } from "./Context.js";
-import apicall from "./db.js";
 import { v4 as uid } from "uuid";
 export default function Products() {
   const contxt = React.useContext(contxtname);
-  const [carts, setCart] = React.useState([]);
 
   const addtocart = (e, y) => {
     let flag = 0;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import apicall from './db.js';
 import {productsdata} from"./datas.js"
 export const contxtname = React.createContext();
 

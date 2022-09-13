@@ -203,7 +203,7 @@ export const productsdata = [
     mainCat: "Fresh_Fruits",
   },
   {
-    id: 17453,
+    id: 17453442,
     quantity: 1,
     storeProductId: 2610,
     productId: 17145,
@@ -216,7 +216,7 @@ export const productsdata = [
     mainCat: "Fresh_Fruits",
   },
   {
-    id: 179053,
+    id: 179052233,
     quantity: 1,
     storeProductId: 2610,
     productId: 13710154,
@@ -229,7 +229,7 @@ export const productsdata = [
     mainCat: "Fresh_Non_Veg",
   },
   {
-    id: 179053,
+    id: 17905223,
     quantity: 1,
     storeProductId: 2610,
     productId: 137198,
@@ -241,7 +241,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 17905366,
     quantity: 1,
     storeProductId: 2610,
     productId: 1371335,
@@ -253,7 +253,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 1790539,
     quantity: 1,
     storeProductId: 2610,
     productId: 137111,
@@ -265,7 +265,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 1790538,
     quantity: 1,
     storeProductId: 2610,
     productId: 137122,
@@ -277,7 +277,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 1790537,
     quantity: 1,
     storeProductId: 2610,
     productId: 137133,
@@ -289,7 +289,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 1790536,
     quantity: 1,
     storeProductId: 2610,
     productId: 137144,
@@ -301,7 +301,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 1790535,
     quantity: 1,
     storeProductId: 2610,
     productId: 137155,
@@ -313,7 +313,7 @@ export const productsdata = [
     sellPrice: 30,
     mainCat: "Fresh_Non_Veg",
   }, {
-    id: 179053,
+    id: 1790534,
     quantity: 1,
     storeProductId: 2610,
     productId: 137199,

@@ -35,10 +35,11 @@ import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import MenuIcon from "@mui/icons-material/Menu";
 import CategoryIcon from "@mui/icons-material/Category";
-import { styled, alpha } from '@mui/material/styles';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
-
+import { styled, alpha } from "@mui/material/styles";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LogoutIcon from "@mui/icons-material/Logout";
 const styleoffer = {
   fontWeight: "bolder",
 };
@@ -63,45 +64,45 @@ const stylecontact = {
 };
 const theme = createTheme();
 
-const Search = styled('div')(({ theme }) => ({
-  border:'1px solid black',
-  
-  position: 'relative',
+const Search = styled("div")(({ theme }) => ({
+  border: "1px solid black",
+
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
+  "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: "auto",
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '30ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "30ch",
       },
     },
   },
@@ -119,14 +120,17 @@ export default function Nav() {
   const [location, setlocation] = React.useState(false);
   const handlelocation = () => setlocation(true);
   const handlelocationClose = () => setlocation(false);
-
   const [fname, setFirstname] = React.useState("");
   const [lname, setLname] = React.useState("");
   const [mail, setMail] = React.useState("");
   const [pass, setPass] = React.useState("");
-  const [searchTxt, setSearchTxt] = React.useState("");
+
+  const [chkmail, setchkMail] = React.useState("");
+  const [chkpass, setchkPass] = React.useState("");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorElcat, setAnchorElcat] = React.useState(null);
+  const [anchorElmoreoption, setAnchorElanchorElmoreoption] =
+    React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -134,6 +138,15 @@ export default function Nav() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const moreoption = Boolean(anchorElmoreoption);
+  const handleClickopt = (event) => {
+    setAnchorElanchorElmoreoption(event.currentTarget);
+  };
+  const handleCloseopt = () => {
+    setAnchorElanchorElmoreoption(null);
+  };
+
   const opencategory = Boolean(anchorElcat);
   const handleClickcat = (event) => {
     setAnchorElcat(event.currentTarget);
@@ -141,15 +154,18 @@ export default function Nav() {
   const handleClosecat = () => {
     setAnchorElcat(null);
   };
-  const searchfunc=(e)=>{
+  const searchfunc = (e) => {
     var show = [];
-    contxt.products.map(i=>{
-      if(i.pname.toLowerCase().includes(e) || i.mainCat.toLowerCase().includes(e)){
+    contxt.products.map((i) => {
+      if (
+        i.pname.toLowerCase().includes(e) ||
+        i.mainCat.toLowerCase().includes(e)
+      ) {
         show = [...show, i];
       }
-    })
+    });
     contxt.setCat_Products(show);
-  }
+  };
   const proceedtocheckout = () => {
     if (contxt.login === "") {
       handleregister();
@@ -327,8 +343,8 @@ export default function Nav() {
       };
       contxt.setUserdata([...contxt.userdata, user]);
       alert("Account Created successfully!");
-      setFirstname("null");
-      setLname("null");
+      // setFirstname("null");
+      // setLname("null");
       setMail("null");
       setPass("null");
       handleloginClose();
@@ -336,11 +352,11 @@ export default function Nav() {
   };
   const loginfunc = () => {
     let done = 0;
-    if (mail === "null" || pass === "null") {
+    if (chkmail === "" || chkpass === "") {
       alert("All fields are mandetory!");
     } else {
       contxt.userdata.map((i) => {
-        if (i.e_mail === mail && i.password === pass) {
+        if (i.e_mail === chkmail && i.password === chkpass) {
           done = 1;
         }
       });
@@ -348,10 +364,13 @@ export default function Nav() {
     if (done == 0) {
       alert("Invalid credentials");
     } else {
-      contxt.setLogin("Logged in");
+      contxt.setLogin(fname);
       alert("Logged in successfully");
       handleregisterClose();
     }
+  };
+  const handlelogout = () => {
+    contxt.setLogin("");
   };
   const senttosignup = () => {
     handleregisterClose();
@@ -375,6 +394,18 @@ export default function Nav() {
       contxt.setCat_Products(show);
     }
   };
+
+  const inc = () => {
+    let ar1 = [...contxt.cat_products];
+    ar1.sort((a, b) => a.price - b.price);
+    contxt.setCat_Products(ar1);
+  };
+  const dec = () => {
+    let ar1 = [...contxt.cat_products];
+    ar1.sort((a, b) => b.price - a.price);
+    contxt.setCat_Products(ar1);
+  };
+
   return (
     <>
       <div>
@@ -652,7 +683,7 @@ export default function Nav() {
                               name="email"
                               autoComplete="email"
                               onChange={(e) => {
-                                setMail(e.target.value);
+                                setchkMail(e.target.value);
                               }}
                             />
                           </Grid>
@@ -666,7 +697,7 @@ export default function Nav() {
                               id="password"
                               autoComplete="new-password"
                               onChange={(e) => {
-                                setPass(e.target.value);
+                                setchkPass(e.target.value);
                               }}
                             />
                           </Grid>
@@ -729,32 +760,53 @@ export default function Nav() {
               <p>Location</p>
             </div>
           </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              handleregister();
-            }}
-          >
-            <div className="plusminuscart2">
-              <IconButton onClick={handleregister}>
-                <LoginIcon sx={{ color: "#556D0B" }} />
-              </IconButton>
-              <p>Login</p>
-            </div>
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              handlelogin();
-            }}
-          >
-            <div className="plusminuscart2">
-              <IconButton onClick={handlelogin}>
-                <TelegramIcon sx={{ color: "#556D0B" }} />
-              </IconButton>
-              <p>Register</p>
-            </div>
-          </MenuItem>
+          {contxt.login === "" ? (
+            <>
+              <MenuItem
+                onClick={() => {
+                  handleClose();
+                  handleregister();
+                }}
+              >
+                <div className="plusminuscart2">
+                  <IconButton onClick={handleregister}>
+                    <LoginIcon sx={{ color: "#556D0B" }} />
+                  </IconButton>
+                  <p>Login</p>
+                </div>
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  handleClose();
+                  handlelogin();
+                }}
+              >
+                <div className="plusminuscart2">
+                  <IconButton onClick={handlelogin}>
+                    <TelegramIcon sx={{ color: "#556D0B" }} />
+                  </IconButton>
+                  <p>Register</p>
+                </div>
+              </MenuItem>
+            </>
+          ) : (
+            <>
+              <MenuItem
+                onClick={() => {
+                  handleClose();
+                  handlelogout();
+                }}
+              >
+                <div className="plusminuscart2">
+                  <IconButton onClick={handlelogout}>
+                    <LogoutIcon sx={{ color: "#556D0B" }} />
+                  </IconButton>
+                  <p>Logout</p>
+                </div>
+              </MenuItem>
+            </>
+          )}
+
           <MenuItem onClick={handleClickcat}>
             <div className="plusminuscart2">
               <IconButton onClick={handleClickcat}>
@@ -777,7 +829,7 @@ export default function Nav() {
           <MenuItem
             onClick={() => {
               handleClosecat();
-              handleClose(); 
+              handleClose();
               categoryfunc("All_products");
             }}
           >
@@ -851,16 +903,28 @@ export default function Nav() {
               <LocationOnIcon sx={{ color: "white" }} />
             </IconButton>
           </Tooltip>
-          <Tooltip title="Login">
-            <IconButton onClick={handleregister}>
-              <LoginIcon sx={{ color: "white" }} />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Register here">
-            <IconButton onClick={handlelogin}>
-              <TelegramIcon sx={{ color: "white" }} />
-            </IconButton>
-          </Tooltip>
+          {contxt.login === "" ? (
+            <>
+              <Tooltip title="Login">
+                <IconButton onClick={handleregister}>
+                  <LoginIcon sx={{ color: "white" }} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Register here">
+                <IconButton onClick={handlelogin}>
+                  <TelegramIcon sx={{ color: "white" }} />
+                </IconButton>
+              </Tooltip>
+            </>
+          ) : (
+            <>
+              <Tooltip title="Logout">
+                <IconButton onClick={handlelogout}>
+                  <LogoutIcon sx={{ color: "white" }} />
+                </IconButton>
+              </Tooltip>
+            </>
+          )}
         </div>
       </div>
       <div className="navbar">
@@ -885,16 +949,50 @@ export default function Nav() {
           <p className="timing"> 8:00 am To 6:00 pm </p>
         </div>
         <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              onChange={(e)=>{searchfunc(e.target.value)}}
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            onChange={(e) => {
+              searchfunc(e.target.value);
+            }}
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+
+        <Tooltip title="More Options">
+          <IconButton onClick={handleClickopt}>
+            <MoreVertIcon color="success" />
+          </IconButton>
+        </Tooltip>
+
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorElmoreoption}
+          open={moreoption}
+          onClose={handleCloseopt}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem
+            onClick={() => {
+              inc();
+              handleCloseopt();
+            }}
+          >
+            Low to High
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              dec();
+              handleCloseopt();
+            }}
+          >
+            High to Low
+          </MenuItem>
+        </Menu>
         {/* <Button variant="contained" sx={styleoffer}>
           My Offers
         </Button> */}
