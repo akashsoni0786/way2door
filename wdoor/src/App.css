@@ -1,0 +1,250 @@
+*{
+  /* box-sizing: border-box; */
+  /* padding: 0; */
+  /* margin: 0; */
+}
+body{
+  min-height: 100vh;
+}
+.homepage{
+  display: flex;
+  justify-content: space-between;
+}
+.allproducts{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.leftnav{
+  width:250px;
+  min-height: 100vh;
+  max-height: 100vh;
+  position: sticky;
+  top:180px;
+  background-color: #c4e0b7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.productbox{
+  height: 450px;
+  width: 250px;
+  background-color: white;
+  border: 1px solid rgb(214, 211, 211);
+  position: relative;
+  padding: 12px;
+  flex-grow: 1;
+}
+.imgcss{
+  width: inherit;
+}
+.offer{
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  color: #56AA30;
+  font-size: 15px;
+}
+.proname{
+  color: #363636;
+  font-size: 20px;
+  font-weight: bold;
+}
+.pricewtdiv{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: -20px;
+}
+.weight{
+  color: #fc3e3e;
+  border: 1px solid #fc3e3e;
+  padding: 2px;
+  width: max-content;
+  font-size: 14px;
+}
+.crossprice{
+  margin-left: 15px;
+  font-size: 20px;
+  color: red;
+}
+.price{
+  margin-left: 15px;
+  font-size: 24px;
+  color: #4E9A06;
+}
+.plusminuscart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plusminuscart2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quantity{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.adtocartbtn{
+  background-color: rgb(163, 8, 8);
+  color: white;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  
+}
+.reviewcontct{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.reviewcontct2{
+  margin-top: -20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.sidebtns{
+  margin-top: 20px;
+  margin-left: -40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  
+}
+.sidebtns p{
+
+  padding: 10px 25px;
+  color: #666666;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 12px 0px;
+}
+.sidebtns p:hover{
+  background-color: #556D0B;
+  color: white;
+}
+.upperdiv{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 40px;
+  background-color: #556D0B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.downloadnow{
+  font-size: 15px;
+  color:white;
+  font-weight: bolder;
+}
+.linkdiv{
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.downloadlink{
+  font-size: 15px;
+  color:#b2cf5b;
+  font-weight: bolder;
+}
+.iconsupper{
+  width: 250px;
+  /* background-color: wheat; */
+  /* height: 50px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar{
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 40px;
+  z-index: 1;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar img{
+    width: 180px;
+}
+.sastatext{
+  font-size: 20px;
+  color: #d31d35;
+}
+.lowerdiv{
+  position: sticky;
+  top: 142px;
+  z-index: 1;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+.timingdiv{
+  display: flex;
+
+}
+.timehead{
+  font-weight: bold;
+  margin-left: 10px;
+}
+.timing{
+  color: #556D0B;
+  font-weight: bold;
+}
+.headcross{
+  padding: 10px 20px;
+  display: flex;
+  justify-content: right;
+}
+.emptycart{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menumobile{
+  width: 30px;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width:900px) {
+  .iconsupper{
+    display: none;
+  }
+  .menumobile{
+    width: 30px;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+  }
+  .leftnav{
+    display: none;
+  }
+  .sastatext{
+    font-size: 15px;
+    color: #d31d35;
+  }
+  .productbox{
+    width: 250px;
+    background-color: white;
+    border: 1px solid rgb(214, 211, 211);
+    position: relative;
+    padding: 12px;
+    flex-grow: 0;
+  }
+  
+}
