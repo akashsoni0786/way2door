@@ -335,7 +335,8 @@ export default function Nav() {
   const signupfunc = () => {
     if (fname === "" || lname === "" || mail === "" || pass === "") {
       alert("All fields are mandetory!");
-    } else {
+    }
+    else {
       const user = {
         f_name: fname,
         l_name: lname,
@@ -344,8 +345,6 @@ export default function Nav() {
       };
       contxt.setUserdata([...contxt.userdata, user]);
       alert("Account Created successfully!");
-      // setFirstname("null");
-      // setLname("null");
       setMail("null");
       setPass("null");
       handleloginClose();
@@ -457,7 +456,7 @@ export default function Nav() {
                       <Box
                         component="form"
                         noValidate
-                        onSubmit={handleSubmit}
+                        // onSubmit={handleSubmit}
                         sx={{ mt: 3 }}
                       >
                         <Grid container spacing={2}>
@@ -542,7 +541,7 @@ export default function Nav() {
                       <Box
                         component="form"
                         noValidate
-                        onSubmit={signupfunc}
+                        // onSubmit={signupfunc}
                         sx={{ mt: 3 }}
                       >
                         <Grid container spacing={2}>
