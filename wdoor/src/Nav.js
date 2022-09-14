@@ -161,6 +161,7 @@ export default function Nav() {
         i.pname.toLowerCase().includes(e) ||
         i.mainCat.toLowerCase().includes(e)
       ) {
+        window.scrollTo(0,200)
         show = [...show, i];
       }
     });

@@ -18,6 +18,7 @@ export const Context = (props) => {
   const [userdata, setUserdata] = useState([]);
   const [login, setLogin] = useState('');
   React.useEffect(()=>{
+    // window.scrollTo(0,0);
     const ax =  ()=>
     {
       try

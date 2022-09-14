@@ -85,33 +85,39 @@ export default function Products() {
   };
 
   return (
-    <div className="allproducts">
-      {contxt.cat_products.map((i) => {
-        return (
-          <ProductBox
-            id={i.productId}
-            key={i.index}
-            img={i.pimage}
-            name={i.pname}
-            off={(((i.price - i.sellPrice) / i.price) * 100).toFixed(0)}
-            weight={i.pUnit}
-            cross={i.price}
-            real={i.sellPrice}
-            increment={() => {
-              increment(i.productId);
-            }}
-            decrement={() => {
-              decrement(i.productId);
-            }}
-            addtocart={() => {
-              addtocart(i.id, i.productId);
-            }}
-            removefromcart={() => {
-              removefromcart(i.productId);
-            }}
-          />
-        );
-      })}
+    <div>
+      <div>
+        <img className="banner" alt="" src="http://www.way2door.com/images/stores/banner_1574312382banner-lucknow-veg-express-min.png"/>
+      </div>
+      {/* {(contxt.cat_products.length>0)?window.scrollTo(0,200):''} */}
+      <div className="allproducts">
+        {contxt.cat_products.map((i) => {
+          return (
+            <ProductBox
+              id={i.productId}
+              key={i.index}
+              img={i.pimage}
+              name={i.pname}
+              off={(((i.price - i.sellPrice) / i.price) * 100).toFixed(0)}
+              weight={i.pUnit}
+              cross={i.price}
+              real={i.sellPrice}
+              increment={() => {
+                increment(i.productId);
+              }}
+              decrement={() => {
+                decrement(i.productId);
+              }}
+              addtocart={() => {
+                addtocart(i.id, i.productId);
+              }}
+              removefromcart={() => {
+                removefromcart(i.productId);
+              }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
